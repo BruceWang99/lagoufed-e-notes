@@ -252,7 +252,7 @@ file-loaderr设置 esModule为false
 				use: [
 					'style-loader', 
 					{
-						loader: 'css-loader',
+						loader: 'css-loader', // // @import 和 url() 进行处理，就像 js 解析 import/require() 一样。但是不能把样式放到界面上使用
 						options: {
 							importLoaders: 1, // 碰到引入的css文件, 再次从上一个loader处理下, 这里是postcss-loader
 							esModule: false // 不转成esModule
@@ -819,7 +819,7 @@ const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 抽离
 
 ```javascript
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+  const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 		{
 				test: /\.css$/,// 一般是一个正则表达式, 用来匹配文件类型
